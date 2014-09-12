@@ -1,0 +1,15 @@
+ul {
+  font-family: arial, san-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  list-style-type: none;
+  margin: 30px 50px;
+  padding: 0;
+}
+ul li {
+  margin: 0 0 20px 0;
+}
+ul li strong {
+  color: #5a9cdd;
+  display: block;
+}

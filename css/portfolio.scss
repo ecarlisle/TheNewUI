@@ -1,0 +1,203 @@
+// ---------- SASS Variables ----------
+
+// Colors
+$white: #fff;
+$black: #666;
+$blue: #369;
+$light-blue: saturate(lighten($blue, 33), 12);
+$dark-blue: darken($blue, 3);
+
+// Fonts
+$architects-daughter: 'Architects Daughter', sans-serif;
+$lato: 'Lato', sans-serif;
+
+
+// ---------- SASS Mixins ----------
+
+@mixin bp($point) {
+  // Small devices (tablets, 768px and up)
+  @if $point == small {
+    @media all and (min-width: 768px) { @content; }
+  }
+  // Medium devices (desktops, 992px and up)
+  @else if $point == medium {
+    @media all and (min-width: 992px) { @content; }
+  }
+  // Large devices (large desktops, 1200px and up)
+  @else if $point == large {
+    @media all and (min-width: 1200px)  { @content; }
+  }
+}
+
+@mixin font-size($size: 1.6) {
+  font-size: ($size * 10) + px;
+  font-size: $size + rem;
+}
+
+// ---------- Tag Selectors ----------
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $black;
+  font-family: $lato;
+  @include font-size;
+}
+
+article {
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 100%;
+  @include bp(small) {
+    width: 750px;
+  }
+  @include bp(medium) {
+    width: 970px;
+  }
+  @include bp(large) {
+    width: 1170px;
+  }
+}
+
+section {
+  margin: 0 20px;
+}
+
+a {
+  color: $dark-blue;
+}
+
+p {
+  margin: 5px 0 10px 0;
+}
+
+h1 {
+  font: 36px/1 $architects-daughter;
+
+  @include bp(small) {
+    font-size: 48px;
+  }
+  @include bp(large) {
+    font-size: 72px;
+  }
+  margin: 10px 0 15px;
+  text-align: center;
+
+  @include bp(small) {
+    text-align: left;
+  }
+}
+
+h2 {
+  border-bottom: solid 1px lighten($blue, 50);
+  color: $dark-blue;
+  font: bold 36px/ $architects-daughter;
+  margin: 30px 0 20px;
+  text-align: center;
+}
+
+h3 {
+  color: $light-blue;
+  font: bold 20px/1 $architects-daughter;
+  margin: 0;
+}
+
+
+footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+// ---------- ID Selectors ----------
+
+.bg-wrapper {
+  background: url('../img/hero-bg.png');
+  color: $white;
+}
+
+#nav-top {
+
+  margin-top: 20px;
+
+  ul {
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    li {
+      padding: 10px 0;
+      border-top: solid 1px $white;
+      text-align: center;
+    }
+
+    @include bp(small) {
+      display: flex;
+      flex-direction: row;
+      li {
+        flex-grow: 1;
+        border: 0;
+      }
+    }
+
+    @include bp(large) {
+      justify-content: flex-end;
+      li {
+        flex-grow: 0;
+        padding: 10px 15px;
+      }
+    }
+
+    li {
+
+      a {
+        color: #fff;
+        font-family: $architects-daughter;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+#what-i-do-container, #skills-container {
+  display: flex;
+  flex-direction: column;
+
+  @include bp(medium) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+// ---------- Class Selectors ----------
+
+.tag-line {
+  font: normal normal normal 18px/1 $architects-daughter;
+  color: $light-blue;
+  margin: 0 0 10px 0;
+  text-align: center;
+
+  @include bp(small) {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  @include bp(large) {
+    font-size: 36px;
+  }
+}
+
+.contact-icon {
+  display: inline-block;
+  margin: 10px;
+}
