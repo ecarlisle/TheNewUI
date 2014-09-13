@@ -22,5 +22,4 @@ var projects = {
 $(document).ready(function(){
   $template = $('#projects-template').html();
   $('#projects-container').html(Mustache.render($template,projects));
-  console.log(Mustache.render($template,projects));
 });
