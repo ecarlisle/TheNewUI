@@ -26,7 +26,7 @@ $lato: 'Lato', sans-serif;
   font-size: calculateRem($size);
 }
 
-// * insert */
+// *** insert #1 ***
 
 // ---------- Tag Selectors ----------
 
@@ -45,7 +45,7 @@ article {
   padding: 10px 0;
   width: 100%;
 
-  // * insert *
+  // *** insert #2 ***
 }
 
 section {
@@ -65,7 +65,8 @@ h1 {
   margin: 10px 0 15px;
   text-align: center;
 
-  // *  insert *
+  // *** insert #3 ***
+
 }
 
 h2 {
@@ -112,12 +113,6 @@ footer {
       padding: 10px 0;
       border-top: solid 1px $white;
       text-align: center;
-    }
-
-
-    // * insert *
-
-    li {
 
       a {
         color: #fff;
@@ -129,18 +124,21 @@ footer {
         }
       }
     }
+
+    // *** insert #4 ***
+
   }
 }
 
 #what-i-do-container, #skills-container, #projects-container {
 
-  // * insert *
+  // *** insert #5 ***
 
 }
 
 #social-container {
 
-  //* insert
+  // *** insert #6 ***
 
   margin-bottom: 20px;
 }
@@ -153,7 +151,7 @@ footer {
   margin: 0 0 10px 0;
   text-align: center;
 
-  // * insert *
+  // *** insert #7 ***
 
 }
 

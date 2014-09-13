@@ -26,6 +26,7 @@ $lato: 'Lato', sans-serif;
   font-size: calculateRem($size);
 }
 
+// *** insert 1 ***
 @mixin bp($point) {
   // Small devices (tablets, 768px and up)
   @if $point == small {
@@ -58,6 +59,8 @@ article {
   margin: 0 auto;
   padding: 10px 0;
   width: 100%;
+
+  // *** insert 2 ***
   @include bp(small) {
     width: 750px;
   }
@@ -86,6 +89,7 @@ h1 {
   margin: 10px 0 15px;
   text-align: center;
 
+  // *** insert 3 ***
   @include bp(small) {
     @include font-size(48px);
     text-align: left;
@@ -139,8 +143,19 @@ footer {
       padding: 10px 0;
       border-top: solid 1px $white;
       text-align: center;
+
+      a {
+        color: #fff;
+        font-family: $architects-daughter;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
+    // *** insert 4 ***
     @include bp(small) {
       display: flex;
       flex-direction: row;
@@ -157,23 +172,13 @@ footer {
         padding: 10px 15px;
       }
     }
-
-    li {
-
-      a {
-        color: #fff;
-        font-family: $architects-daughter;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
   }
 }
 
 #what-i-do-container, #skills-container, #projects-container {
+
+  // *** insert 5 ***
+
   display: flex;
   flex-direction: column;
 
@@ -184,6 +189,8 @@ footer {
 }
 
 #social-container {
+
+  // *** insert 6 ***
   display: flex;
   flex-wrap: wrap;
 
@@ -203,6 +210,7 @@ footer {
   margin: 0 0 10px 0;
   text-align: center;
 
+  // *** insert #7 ***
   @include bp(small) {
     @include font-size(24px);
     text-align: left;
