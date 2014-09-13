@@ -1,0 +1,47 @@
+// --- Variables ---
+$blue: #369;
+$black: #333;
+$header-fonts: 'Architects Daughter', sans-serif;
+$content-fonts: arial, san-serif;
+
+// Functions
+@function calculateRem($size) {
+  $remSize: $size / 10px;
+  @return $remSize * 1rem;
+}
+
+// Mixins
+@mixin font-size($size: 16px) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// Selectors
+h1 {
+  font-family: $header-fonts;
+  @include font-size(72px);
+}
+
+h2 {
+  @extend h1;
+  @include font-size(26px);
+}
+
+ul {
+
+  font-family: $content-fonts;
+  @include font-size;
+  list-style-type: none;
+  padding: 0;
+  margin: 30px 50px;
+
+  li {
+    margin: 0 0 20px 0;
+    color: $black;
+
+    strong {
+      color: saturate(lighten($blue, 21), 16);
+      display: block;
+    }
+  }
+}

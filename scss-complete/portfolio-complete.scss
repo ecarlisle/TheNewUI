@@ -26,7 +26,21 @@ $lato: 'Lato', sans-serif;
   font-size: calculateRem($size);
 }
 
-// * insert */
+@mixin bp($point) {
+  // Small devices (tablets, 768px and up)
+  @if $point == small {
+    @media all and (min-width: 768px) { @content; }
+  }
+  // Medium devices (desktops, 992px and up)
+  @else if $point == medium {
+    @media all and (min-width: 992px) { @content; }
+  }
+  // Large devices (large desktops, 1200px and up)
+  @else if $point == large {
+    @media all and (min-width: 1200px)  { @content; }
+  }
+}
+
 
 // ---------- Tag Selectors ----------
 
@@ -44,8 +58,15 @@ article {
   margin: 0 auto;
   padding: 10px 0;
   width: 100%;
-
-  // * insert *
+  @include bp(small) {
+    width: 750px;
+  }
+  @include bp(medium) {
+    width: 970px;
+  }
+  @include bp(large) {
+    width: 1170px;
+  }
 }
 
 section {
@@ -65,7 +86,13 @@ h1 {
   margin: 10px 0 15px;
   text-align: center;
 
-  // *  insert *
+  @include bp(small) {
+    @include font-size(48px);
+    text-align: left;
+  }
+  @include bp(large) {
+    @include font-size(72px);
+  }
 }
 
 h2 {
@@ -114,8 +141,22 @@ footer {
       text-align: center;
     }
 
+    @include bp(small) {
+      display: flex;
+      flex-direction: row;
+      li {
+        flex-grow: 1;
+        border: 0;
+      }
+    }
 
-    // * insert *
+    @include bp(large) {
+      justify-content: flex-end;
+      li {
+        flex-grow: 0;
+        padding: 10px 15px;
+      }
+    }
 
     li {
 
@@ -133,14 +174,23 @@ footer {
 }
 
 #what-i-do-container, #skills-container, #projects-container {
+  display: flex;
+  flex-direction: column;
 
-  // * insert *
-
+  @include bp(medium) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 #social-container {
+  display: flex;
+  flex-wrap: wrap;
 
-  //* insert
+  @include bp(small) {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
 
   margin-bottom: 20px;
 }
@@ -153,8 +203,14 @@ footer {
   margin: 0 0 10px 0;
   text-align: center;
 
-  // * insert *
+  @include bp(small) {
+    @include font-size(24px);
+    text-align: left;
+  }
 
+  @include bp(large) {
+    @include font-size(36px);
+  }
 }
 
 .contact-icon {
